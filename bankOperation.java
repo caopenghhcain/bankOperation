@@ -329,8 +329,8 @@ public class bankOperation {
     }//The method of current account 2.1.2
 
     public void currentAccountInterest(account ac){
-        DecimalFormat df=new DecimalFormat("0.00");
-        ac.setInterestC(df.format(ac.getMoneyC()*0.002/365));
+        double data=ac.getMoneyC();
+        ac.setInterestC(String.format("%.2f",data*0.002/365));
     }//Change the current account interest 0.2
 
     public void savingAccountInterest(account ac){
@@ -373,8 +373,9 @@ public class bankOperation {
         System.out.println("The amount you want to transfer：");
         double transfer = input.nextDouble();
         ac.setMoneyT(transfer + ac.getMoneyT());
-        DecimalFormat df = new DecimalFormat("0.00");
-        ac.setInterestT(df.format(ac.getMoneyT() * 0.011));
+        double data=ac.getMoneyT();
+        String str =Double.toString((double) Math.round(data*0.011*100.0)/100.0);
+        ac.setInterestT(str);
         System.out.println("Expected earnings in one year:" + ac.getInterestT());
     }//The detail of short-time account 2.1.4
 
