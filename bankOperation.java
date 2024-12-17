@@ -184,12 +184,12 @@ public class bankOperation {
     } //Confirm the transfer recipient 2.3.2
 
     public void drawMoneyMenu(account ac){
+        System.out.println(" ");
+        System.out.println(BLUE+"Are you sure you want to withdraw money"+RESET);
+        System.out.println(GREEN+"1）Continue"+RESET);
+        System.out.println(GREEN+"0）Return"+RESET);
+        System.out.println(YELLOW+"Please enter your operational requirement."+RESET);
         while (true) {
-            System.out.println(" ");
-            System.out.println(BLUE+"Are you sure you want to withdraw money"+RESET);
-            System.out.println(GREEN+"1）Continue"+RESET);
-            System.out.println(GREEN+"0）Return"+RESET);
-            System.out.println(YELLOW+"Please enter your operational requirement."+RESET);
             String i = input.next();
             switch (i) {
                 case "1":
@@ -239,9 +239,9 @@ public class bankOperation {
                 }
             }else {
                 if(number>ac.getMoneyC()+ac.getMoneyS()+ac.getMoneyT()){
-                    System.out.println(BLUE+"Insufficient Balance"+RESET);
+                    System.out.println(RED+"Insufficient Balance"+RESET);
                 }else {
-                    System.out.println(RED+"The money inside cannot be withdrawn online, and withdrawing it offline from the bank will result in a loss of 20% of the principal"+RESET);
+                    System.out.println(RED+"The money inside Time account cannot be withdrawn online, and withdrawing it offline from the bank will result in a loss of 20% of the principal"+RESET);
                 }
             }
         }
